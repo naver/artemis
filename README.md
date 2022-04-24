@@ -69,7 +69,7 @@ We note that we do not have the license to release the FashionIQ test set annota
 
 **CIRR** [7]: Please check out the [CIRR repo](https://github.com/Cuberick-Orion/CIRR#download-cirr-dataset) for instructions. Notice that most of the raw images are no longer available due to broken links. We follow the author's instructions and use the pre-extracted ResNet152 features (trained on ImageNet) as a replacement to the images.
 
-For an evaluation on test split CIRR,  
+For an evaluation on test split CIRR, our code produces a .json file compatible to the instructions of [Test-split Server on CIRR Dataset](https://github.com/Cuberick-Orion/CIRR/blob/main/Test-split_server.md)
 
 **Fashion200K** [8]: Please check out the [Fashion200K repo](https://github.com/xthan/fashion-200k) for instructions on how to download the images and the [TIRG repo](https://github.com/google/tirg#fashion200k-dataset) for downloading their generated test queries.
 
