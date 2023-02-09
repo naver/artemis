@@ -122,12 +122,14 @@ class FashionIQDataset(MyDataset):
 	# *** FORMATTING INFORMATION FOR VISUALIZATION PURPOSES
 	############################################################################
 
-	def get_triplet_info(self, index):
+	def get_triplet_info(self, idx):
 		"""
 		Should return 3 strings:
 			- the text modifier
 			- an identification code (name, relative path...) for the reference image
 			- an identification code (name, relative path...) for the target image
 		"""
+		index = idx // 2
+		cap_slice = slice(2, None, -1) if idx%2 else slice(0, 2)
 		ann = self.annotations[index]
-		return " [and] ".join(ann["captions"]), ann["candidate"], ann["target"]
+		return " [and] ".join(ann["captions"][cap_slice]), ann["candidate"], ann["target"]
