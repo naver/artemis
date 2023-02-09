@@ -367,8 +367,11 @@ if __name__ == '__main__':
 	# save printed message on .txt file
 	basename = ""
 	if os.path.basename(args.ckpt) != "model_best.pth":
-		basename = "_%s" % os.path.basename(os.path.basename(args.ckpt))
-	save_txt = os.path.abspath( os.path.join(args.ckpt, os.path.pardir, os.path.pardir, 'eval_message%s.txt' % basename) )
+		basename = "_%s" % os.path.basename(os.path.basename(args.ckpt)).split(".")[0]
+	if args.data_name == "fashionIQ":
+		save_txt = os.path.abspath( os.path.join(args.ckpt, os.path.pardir, os.path.pardir, 'eval_message%s.txt' % basename) )
+	else:
+		save_txt = os.path.abspath( os.path.join(args.ckpt, os.path.pardir, 'eval_message%s.txt' % basename) )
 	with open(save_txt, 'a') as f:
 		f.write(args.data_name + ' ' + args.studied_split + ' ' + args.exp_name + '\n######')
 		f.write(message + '\n######\n')
